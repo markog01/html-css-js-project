@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Skalira ekran tako da stranica izgleda lepše na manjim rezolucijama -->
+  <link rel="stylesheet" href="css/contact.css">  <!-- Učitavanje CSS fajla (contact.css) -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> <!-- Google Font Roboto -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> <!-- Font Awesome CSS (koristi se za ikonice, u ovom slučaju srce unutar footer-a) -->
+</head>
+
+<body>
+  <div class="grid-container">
+    <!-- Header -->
+    <div id="header">
+      <h1>Sneakers Store</h1>
+    </div>
+
+    <!-- Slideshow -->
+    <div id="slideshow">
+      <div class="slide">
+        <img src="images/slideshow/close-up-photo-of-nike-shoe-2119223.jpg">
+      </div>
+
+      <div class="slide">
+        <img src="images/slideshow/pair-of-gray-adidas-plimsolls-1619652.jpg">
+      </div>
+
+      <div class="slide">
+        <img src="images/slideshow/pair-of-white-air-jordan-1-s-2385477.jpg">
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div id="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="location.html">Location</a></li>
+      </ul>
+    </div>
+
+    <!-- Main -->
+    <div id="main-section">
+      <h1 style="text-align:center;">Contact Us</h1>
+        <form name="forma" action="/action_page.php" onsubmit="return fullFormValidation()" method="post"> <!-- onsubmit="return fullFormValidation() - tek nakon što potvrdimo na dugme Pošalji i krenemo da šaljemo vrednosti iz forme pokreni funkciju" -->
+          Name:
+          <input type="text" name="fname">
+          <h3 id="info-tekst1"></h3> <!-- info-tekst id nam je potreban kako bi preko njega u h3 tag ispisivali tekst -->
+          Email:
+          <input type="email" name="femail">
+          <h3 id="info-tekst2"></h3>
+          Message:
+          <input type="text" name="fporuka">
+          <h3 id="info-tekst3"></h3>
+          <input type="submit" value="Send">
+          <h3 id="tekst"></h3>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <p>Copyright © 2020 Univerzitet Sinergija, Bijeljina</p>
+      <p><a href="#">Računarstvo i informatika</a> | <a href="#">Informacione tehnologije</a></p>
+
+      <!-- Autor-->
+      <span class="credits">
+        <p>Made with <i class="fas fa-heart fa-xs" style="color:red"></i> <a
+            href="https://ba.linkedin.com/in/aleksandar-sandro-cvetkovi%C4%87" target="_blank">Aleksandar Sandro
+            Cvetković</a>
+        </p>
+      </span>
+    </div>
+
+    <script type="text/javascript" src="js/slider.js"></script> <!-- Učitavanje glavnog JavaScript fajla "slider.js" -->
+    <script type="text/javascript" src="js/contact.js"></script> <!-- Učitavanje JavaScript fajla za validaciju forme contact.js -->
+</body>
+
+</html>

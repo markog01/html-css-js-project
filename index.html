@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Landing page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Skalira ekran tako da stranica izgleda lepše na manjim rezolucijama -->
+  <link rel="stylesheet" href="css/style.css"> <!-- Učitavanje glavnog CSS fajla -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> <!-- Google Font Roboto -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> <!-- Font Awesome CSS (koristi se za ikonice, u ovom slučaju srce unutar footer-a) -->
+</head>
+
+<body>
+  <div class="grid-container"> <!-- Primarni div sa klasom "grid-container" koja predstavlja kompletan Grid sistem 
+    - Unutar "grid-container" div-a postavljamo sve ostale elemente stranice kao i sekcije npr. u ovom slučaju header, slideshow, navigation, left-section, right-section i footer -->
+    <!-- Header -->
+    <div id="header">
+      <h1>Sneakers Store</h1>
+    </div>
+
+    <!-- Slideshow -->
+    <div id="slideshow">
+      <div class="slide"> <!-- Div tag sa klasom "slide" i slika unutar njega se koristi za JavaScript slideshow -->
+        <img src="images/slideshow/close-up-photo-of-nike-shoe-2119223.jpg">
+      </div>
+
+      <div class="slide">
+        <img src="images/slideshow/pair-of-gray-adidas-plimsolls-1619652.jpg">
+      </div>
+
+      <div class="slide">
+        <img src="images/slideshow/pair-of-white-air-jordan-1-s-2385477.jpg">
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div id="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="location.html">Location</a></li>
+      </ul>
+    </div>
+
+    <!-- Left -->
+    <div id="left-section">
+      <h1>NOVA KOLEKCIJA</h1>
+      <div class="cards">
+        <div class="card">
+          <img src="images/adidas1.jpg" style="height: 100%; width: 100%;">
+        </div>
+        <div class="card">
+          <img src="images/adidas2.jpg" style="height: 100%; width: 100%;">
+        </div>
+        <div class="card">
+          <img src="images/adidas3.jpg" style="height: 100%; width: 100%;">
+        </div>
+        <div class="card">
+          <img src="images/nike1.jpeg" style="height: 100%; width: 100%;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Right -->
+    <div id="right-section">
+      <h1>About Sneakers Store</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel recusandae illum non odio accusantium! Modi et
+        veniam quo odit suscipit quis iusto explicabo unde aperiam necessitatibus, quam, at ratione nam.</p>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis repudiandae sequi blanditiis, amet
+        necessitatibus facilis similique quo culpa consequuntur voluptas impedit ullam, reprehenderit veniam! Et,
+        repellendus. Id, atque ullam! Facilis?</p>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nulla veniam asperiores perspiciatis quasi
+        doloribus explicabo at in officia, unde suscipit harum pariatur amet, sint animi cupiditate obcaecati, quas
+        excepturi?</p>
+
+      <h1>Contact Us</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur repellendus, adipisci quidem eaque quas
+        voluptatibus odio repudiandae. Dolorum laudantium id laborum culpa dolorem ipsum vel sequi. Natus tenetur sit
+        molestiae.</p>
+      <a href="contact.html">Contact</a>
+
+      <h1>Check Our Location</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia debitis obcaecati excepturi, temporibus
+        autem dolorem magni, rerum corporis voluptates assumenda unde incidunt, delectus enim possimus veniam
+        inventore fuga. Facere, recusandae.</p>
+      <a href="location.html">Location</a>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <p>Copyright © 2020 Univerzitet Sinergija, Bijeljina</p>
+      <p><a href="https://www.sinergija.ba" target="_blank">Računarstvo i informatika</a> | <a href="https://www.sinergija.ba" target="_blank">Informacione tehnologije</a></p>
+
+      <!-- Autor-->
+      <span class="credits">
+        <p>Made by <a
+            href="https://ba.linkedin.com/in/aleksandar-sandro-cvetkovi%C4%87" target="_blank">Marko Gligorevic</a>
+        </p>
+      </span>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/slider.js"></script> <!-- Učitavanje glavnog JavaScript fajla "slider.js" 
+    - JavaScript fajl učitavamo na dnu stranice radi bržeg učitavanja stranice
+    - JavaScript kod možemo pisati direktno unutar HTML-a pomoću <script></script> tagova koje postavljamo unutar body taga -->
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+/* Glavni CSS - Početna strana CSS (index.html) */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Znak * označava da pravila važe za sve elemente */
+* {
+    /* border-box znači da ako postavimo na neki div širinu npr. "width: 200px" i postavimo "padding: 50px", bez border-box atributa kao širina računa se i padding što znači da je širina 250px, dok sa border-box atributom uzima se samo širina bez padding-a ili border-a (okvira) */
+    box-sizing: border-box;
+    /* Ukoliko je potrebno isključiti padding i margine koje browser sam dodaje */
+    /*padding: 0;*/
+    /*margin: 0;*/
+}
+
+/* Grid container - Glavni div (sekcija) */
+.grid-container {
+    /* display: grid označava da se radi o glavnom grid div-u u kome se nalaze sve grid sekcije */
+    display: grid;
+    /* grid-template-areas pravi kompletnu strukturu stranice */
+    grid-template-areas: 
+      'header     header    header'     /* prvi red */
+      'slider     slider    slider'     /* drugi red */   
+      'nav        nav       nav'        /* treći red */      
+      'left       right      right'      /* četvrti red */       
+      'footer     footer    footer';    /* peti red */
+    /* 1 kol.     2 kol.    3 kol. */ 
+
+    /* Struktura stranice koje se gore nalazi je 5x3. To znači da se grid sastoji od 5 redova i 3 kolone. Prvi red je "header header header" i on se sastoji od 3 "header" kolone. Prva kolona je "header slider nav left footer" i ona se sastoji od 5 redova. */
+
+    /* grid-gap: 10px omogućava razmak između redova i kolona svih grid sekcija. Ovo nam omogućava da spojimo ili razdvojimo sekcije sa jednom linijom koda */
+    grid-gap: 10px;
+
+    /* grid-template-rows označava koliku će visinu da ima red, dok grid-template-columns označava koliku će širinu da imaju kolone. U ovom slučaju prvi red ima visinu auto, drugi isto auto, itd.. Mogu se koristiti pikseli (px) ili frakcije (fr) umesto automatskog (auto) */
+    /*grid-template-rows: 1fr 4fr 1fr 5fr 1fr;*/ /* za visinu ćelija */
+    grid-template-rows: auto auto auto auto auto;
+  }
+
+/* Header */
+#header {
+    /* "grid-area: header" označava da je sekcija sa id-jem header, grid sekcija sa nazivom header */
+    grid-area: header;
+    background-color: #5AB9EA;
+    /*height: 100px;*/
+
+    color: white;
+    text-align: center;
+}
+
+/* Slideshow */
+#slideshow {
+    grid-area: slider;
+    background-color: firebrick;
+    /*height: 300px;*/
+
+    color: white;
+    text-align: center;
+}
+
+/* pravila važe za svaku sliku unutar div taga sa klasom slide */
+.slide img {
+    width: 100%;
+    max-height: 700px;
+    /* display: block omogućava da sadržaj koji se nalazi unutar diva bude predstavljen u blokovima tj. svaki deo diva da bude posložen jedan ispod drugog, u ovom slučaju omogućava da slika bude preko čitave header sekcije */
+    display: block;
+}
+
+/* Navigation */
+#navigation {
+    /* "grid-area: nav" označava da je sekcija sa id-jem navigation, grid sekcija sa nazivom nav */
+    grid-area: nav;
+    background-color: #5680E9;
+    /*height: 60px;*/
+
+    text-align: center;
+    /*overflow: hidden;*/ /* Ukoliko je potrebno - sve što prelazi granice sekcije navigation može se postaviti da bude sakriveno */
+    font-size: 20px;
+}
+
+#navigation li {
+    /* display: inline omogućava da se stavke liste prikazuju u redu a ne jedna ispod druge */
+    display: inline;
+}
+
+#navigation a {
+    /* text-decoration: none uklanja donju crtu ispod linka */
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+  }
+
+/* Promeni boju pozadine i boju slova samo u slučaju kada se pređe kursorom miša preko linka (a:hover) koji se nalazi u divu sa id-jem "navigation" unutar stavke liste "li" (pravilo važi za sve stavke liste) */
+#navigation li a:hover {
+    background-color: burlywood;
+    color: black;
+  }
+
+/* Left */
+#left-section {
+    /* "grid-area: left" označava da je sekcija sa id-jem left-section, grid sekcija sa nazivom left */
+    grid-area: left;
+    background-color: dodgerblue;
+    /*height: 400px;*/
+    padding: 20px;
+
+    color: rgb(255, 251, 251);
+    text-align: center;
+}
+
+/* Grid Kartice */
+.card {
+    /*background-color: #84CEEB;*/
+    padding: 20px;
+    height: auto;
+  }
+  
+  .cards {
+    /* max-width: 1200px označava da širina ne može biti veća od 1200px ali može biti manja */
+    max-width: 1200px;
+    margin: auto auto;
+    display: grid;
+    grid-gap: 40px;
+  }
+
+  /* Responsive Layout - Kartice */
+  /* Širina ekrana veća od 600px? Prikaži kartice u jednoj koloni (1 column) */
+  @media (min-width: 600px) {
+    .cards { grid-template-columns: repeat(1, 1fr); }
+  }
+  
+  /* Širina ekrana veća od 900px? Prikaži kartice u dve kolone (2 column) */
+  @media (min-width: 900px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Širina ekrana veća od 1200px? Prikaži kartice u tri kolone (3 column) */
+  @media (min-width: 1200px) {
+    .cards { grid-template-columns: repeat(3, 1fr); }
+  }
+
+/* Right */
+#right-section {
+    /* "grid-area: right" označava da je sekcija sa id-jem right-section, grid sekcija sa nazivom right */
+    grid-area: right;
+    background-color: royalblue;
+    /*height: 400px;*/
+    /*min-width: 300px;*/
+    /*max-width: 420px;*/
+
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+#right-section a {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #5AB9EA;
+    text-transform: uppercase;
+}
+
+/* Footer */
+#footer {
+    /* "grid-area: footer" označava da je sekcija sa id-jem footer, grid sekcija sa nazivom footer */
+    grid-area: footer;
+    background-color: #84CEEB;
+    /*height: 60px;*/
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsive Design */
+/* @media (max-width: 600px) { } označava blok koda koji će se izvršiti ukoliko je rezolucija ekrana manja od 600px. To znači da ukoliko promenimo neki deo koda koji smo već napisali stari deo koda će važiti samo ukoliko je rezolucija ekrana veća od 600px dok ako je manja važi ovaj novi deo koda a stari ne (naravno samo deo koda koji je drugačiji) */
+@media (max-width: 600px) {
+  .grid-container  {
+    grid-template-areas: 
+      'header'
+      'slider'   
+      'nav'      
+      'left'
+      'right'       
+      'footer'; 
+  }
+
+  /* Responsive design - Struktura stranice. 
+    - Pošto smo koristili Grid sistem sve što je potrebno kako bi stranica bila prilagođena za mobilne telefone je da se promeni template strukture tj. da postavimo sekcije kojim redosledom želimo da se prikazuju na mobilnim telefonima. Princip pravljenja template-a ostaje isti, u ovom slučaju postavili smo da se prvo prikazuje header, pa ispod slajder, potom navigacija pa ispod nje leva sekcija, pa ispod leve, desna sekcija i na kraju, na dnu stranice footer. Jedina promena je što se desna sekcija prikazuje kompletno u jednom redu ispod leve sekcije a ne odmah pored nje. Na ovaj načim prilagodili smo stranicu za mobilne telefone.
+    */
+
+  /* Navigation */
+  #navigation ul {
+    padding: 0;
+  }
+  
+  #navigation li {
+    padding: 10px;
+    display: block;
+  }
+
+  #navigation a {
+    padding: 0;
+  }
+}
